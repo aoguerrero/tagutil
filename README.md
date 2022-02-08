@@ -1,4 +1,4 @@
-# Music Tag Util
+# Music Tag Utility
 
 This utility parses filenames in the formats:
 
