@@ -8,7 +8,7 @@ Or
 
 - /Artist/Title.xxx
 
-And writes the information inside the tag fields, removing all other fields (including album art, track number, genre, etc.)
+And writes the information inside the tag fields, **removing all other fields** (including album art, track number, genre, etc.)
 
 The fields in the tags are saved as:
 
@@ -41,5 +41,10 @@ Tested with mp3, ogg and m4a file extensions in Linux and Android (using termux)
 ## Releases:
 
 https://github.com/aoguerrero/tagutil/releases/download/v0.1/tagutil.jar
+
+## Dependencies
+
+This utility uses [Jaudiotagger](https://www.jthink.net/jaudiotagger/)
+
 
 
