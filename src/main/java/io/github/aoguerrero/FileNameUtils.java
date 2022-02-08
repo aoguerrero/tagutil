@@ -1,13 +1,16 @@
 package io.github.aoguerrero;
 
 import java.io.File;
+import java.io.IOException;
 
 public class FileNameUtils {
 
-	public static void rename(File file, SongInfo songInfo) {
-		String newName = file.getParent() + File.separator + songInfo.getArtist() + " - " + songInfo.getTitle()
+	public static String rename(File file, SongInfo songInfo) throws IOException {
+		String newName = file.getAbsoluteFile().getParentFile().getCanonicalPath() + File.separator + songInfo.getArtist() + " - " + songInfo.getTitle()
 				+ file.getName().substring(file.getName().lastIndexOf('.'));
-		file.renameTo(new File(newName));
+		File newFile = new File(newName); 
+		file.renameTo(newFile);
+		return newFile.getName();
 	}
 
 }

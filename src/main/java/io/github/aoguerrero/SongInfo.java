@@ -1,6 +1,7 @@
 package io.github.aoguerrero;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.Normalizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,16 +11,17 @@ public class SongInfo {
 	private final String artist;
 	private final String title;
 
-	public SongInfo(File file) throws TagUtilException {
+	public SongInfo(File file) throws TagUtilException, IOException {
 		String fileName = file.getName();
+		fileName = fileName.replaceAll("_", " ");
 		Matcher matcher = Pattern.compile("([0-9]+ )?(.*) - (.*)\\..*").matcher(fileName);
 		if (matcher.matches()) {
 			this.artist = capitalize(cleanUp(matcher.group(2)));
 			this.title = capitalize(cleanUp(matcher.group(3)));
 		} else {
-			if(file.getParent() == null)
+			if(file.getCanonicalFile().getParentFile() == null)
 				throw new TagUtilException("Can't determine the artist name");
-			this.artist = capitalize(cleanUp(file.getParentFile().getName()));
+			this.artist = capitalize(cleanUp(file.getCanonicalFile().getParentFile().getName()));
 			this.title = capitalize(cleanUp(file.getName().substring(0, file.getName().lastIndexOf('.'))));
 		}
 	}
@@ -56,7 +58,7 @@ public class SongInfo {
 
 	@Override
 	public String toString() {
-		return String.format("{artist %s: , title : %s}", artist, title);
+		return String.format("{Artist: %s, Title: %s}", artist, title);
 	}
 
 	
