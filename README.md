@@ -46,7 +46,7 @@ $ find . -iname \*.mp3 -exec java -jar tagutil.jar "{}" \;
 
 Tested with mp3, ogg and m4a file extensions in Linux and Android (using termux), should run fine in Windows.
 
-## Releases:
+## Releases
 
 https://github.com/aoguerrero/tagutil/releases/download/v0.1/tagutil.jar
 
