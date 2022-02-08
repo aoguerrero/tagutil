@@ -16,6 +16,16 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>net.jthink</groupId>
+			<artifactId>jaudiotagger</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.7</version>
+		</dependency>
 	</dependencies>
 
 	<build>
