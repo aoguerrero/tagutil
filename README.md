@@ -8,7 +8,7 @@ Or
 
 - /Artist/Title.xxx
 
-And writes the information in the tag files, removing all other tags (including album art, etc.)
+And writes the information in the tag files, removing all other tags (including album art, track number, genre, etc.)
 
 The fields in the tags are saved as:
 
