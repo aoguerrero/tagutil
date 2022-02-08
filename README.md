@@ -2,11 +2,11 @@
 
 This utility parses filenames in the formats:
 
-- Artist - Title.xxx
+- `Artist - Title.xxx`
 
 Or
 
-- /Artist/Title.xxx
+- `/Artist/Title.xxx`
 
 And writes the information inside the tag fields, **removing all other fields** (including album art, track number, genre, etc.)
 
@@ -18,17 +18,25 @@ Artist -> Artist
 Artist -> Album
 ```
 
-Also, renames the files with the Artist - Title.xxx format.
+And the original file renamed using the format `Artist - Title.xxx`
 
 Characters different from a-zA-Z0-9 or space will be removed (including special characters and accents), the values are changed to capital case with the file extension in lower case, i.e:
-```
-the beatles - hey jude.MP3 -> The Beatles - Hey Jude.mp3
 
-Hey Jude -> Title
-The Beatles -> Artist
-The Beatles -> Album
+`the beatles - hey jude.MP3` is renamed to: `The Beatles - Hey Jude.mp3`
+
+And the fields of the ID3 tags are set to:
+
+```
+Title: Hey Jude 
+Artist: The Beatles
+Album: The Beatles
 ```
 
+## Usage
+
+```
+$ java -jar tagutil.jar "the beatles - hey jude.MP3"
+```
 
 To run in multiple files use:
 
