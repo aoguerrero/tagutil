@@ -12,9 +12,11 @@ And writes the information in the tag files, removing all other tags (including 
 
 The fields in the tags are saved as:
 
+```
 Title -> Title
 Artist -> Artist
 Artist -> Album
+```
 
 Also, renames the files with the Artist - Title.xxx format.
 
