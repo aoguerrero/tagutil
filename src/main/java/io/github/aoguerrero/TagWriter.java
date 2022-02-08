@@ -9,14 +9,14 @@ import org.jaudiotagger.tag.Tag;
 
 public class TagWriter {
 
-	public static void writeTag(File file, SongInfo songInfo) throws Exception {
-		AudioFile af = AudioFileIO.read(file);
-		af.delete();
-		Tag tag = af.getTagOrCreateAndSetDefault();
-		tag.setField(FieldKey.ARTIST, songInfo.getArtist());
-		tag.setField(FieldKey.TITLE, songInfo.getTitle());
-		tag.setField(FieldKey.ALBUM, songInfo.getArtist());
-		af.commit();
-	}
+  public static void writeTag(File file, SongInfo songInfo) throws Exception {
+    AudioFile af = AudioFileIO.read(file);
+    af.delete();
+    Tag tag = af.getTagOrCreateAndSetDefault();
+    tag.setField(FieldKey.ARTIST, songInfo.getArtist());
+    tag.setField(FieldKey.TITLE, songInfo.getTitle());
+    tag.setField(FieldKey.ALBUM, songInfo.getArtist());
+    af.commit();
+  }
 
 }
