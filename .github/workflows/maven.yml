@@ -19,3 +19,12 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn package
+    - name: Upload
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: target/tagutil.jar
+        asset_name: tagutil.jar
+        tag: ${{ github.ref }}
+        overwrite: true
+ 
