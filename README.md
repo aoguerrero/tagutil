@@ -40,6 +40,6 @@ Tested with mp3, ogg and m4a file extensions in Linux and Android (using termux)
 
 ## Releases:
 
-https://github.com/aoguerrero/tagutil/releases/download/master/tagutil.jar
+https://github.com/aoguerrero/tagutil/releases/download/v0.1/tagutil.jar
 
 
