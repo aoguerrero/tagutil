@@ -6,17 +6,18 @@ public class Params {
 
   private final File file;
   private final static String currentDirectory = System.getProperty("user.dir");
+  private final String album;
 
   public Params(String[] args) throws TagUtilException {
-    if (args.length != 1) {
+    if (args.length > 2) {
       throw new TagUtilException("Invalid number or arguments");
     }
     String fileName = args[0];
-    file = validatePath(fileName);
-  }
-
-  public File getFile() {
-    return file;
+    this.file = validatePath(fileName);
+    if (args.length > 1)
+      this.album = args[1];
+    else
+      this.album = null;
   }
 
   private File validatePath(String fileName) throws TagUtilException {
@@ -32,4 +33,13 @@ public class Params {
     }
     return tmpFile;
   }
+
+  public File getFile() {
+    return file;
+  }
+  
+  public String getAlbum() {
+    return this.album;
+  }
+
 }

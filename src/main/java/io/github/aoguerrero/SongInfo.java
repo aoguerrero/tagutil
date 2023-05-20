@@ -10,8 +10,13 @@ public class SongInfo {
 
   private final String artist;
   private final String title;
+  private final String album;
 
   public SongInfo(File file) throws TagUtilException, IOException {
+    this(file, null);
+  }
+  
+  public SongInfo(File file, String album) throws TagUtilException, IOException {
     String fileName = file.getName();
     fileName = fileName.replaceAll("_", " ");
     Matcher matcher = Pattern.compile("([0-9]+ )?(.*) - (.*)\\..*").matcher(fileName);
@@ -24,6 +29,8 @@ public class SongInfo {
       this.artist = capitalize(cleanUp(file.getCanonicalFile().getParentFile().getName()));
       this.title = capitalize(cleanUp(file.getName().substring(0, file.getName().lastIndexOf('.'))));
     }
+    this.album = album == null ? this.artist : album;
+
   }
 
   private String cleanUp(String name) {
@@ -55,6 +62,10 @@ public class SongInfo {
 
   public String getTitle() {
     return title;
+  }
+
+  public String getAlbum() {
+    return album;
   }
 
   @Override

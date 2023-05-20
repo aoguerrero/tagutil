@@ -41,7 +41,7 @@ $ java -jar tagutil.jar "the beatles - hey jude.MP3"
 To run in multiple files use:
 
 ```
-$ find . -iname \*.mp3 -exec java -jar tagutil.jar "{}" \;
+$ find . \( -name "*.mp3" -o -name "*.m4a" -o -name "*.ogg" \) -maxdepth 1 -exec java -jar tagutil.jar "{}" Music \;
 ```
 
 Tested with mp3, ogg and m4a file extensions in Linux and Android (using termux), should run fine in Windows.

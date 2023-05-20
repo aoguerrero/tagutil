@@ -11,7 +11,7 @@ public class Main {
 
       Params params = new Params(args);
       System.out.print(params.getFile().getCanonicalPath() + " -> ");
-      SongInfo songInfo = new SongInfo(params.getFile());
+      SongInfo songInfo = new SongInfo(params.getFile(), params.getAlbum());
       System.out.print(songInfo.toString() + " -> ");
       TagWriter.writeTag(params.getFile(), songInfo);
       System.out.println(FileNameUtils.rename(params.getFile(), songInfo));

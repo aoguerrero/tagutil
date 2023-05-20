@@ -15,7 +15,7 @@ public class TagWriter {
     Tag tag = af.getTagOrCreateAndSetDefault();
     tag.setField(FieldKey.ARTIST, songInfo.getArtist());
     tag.setField(FieldKey.TITLE, songInfo.getTitle());
-    tag.setField(FieldKey.ALBUM, songInfo.getArtist());
+    tag.setField(FieldKey.ALBUM, songInfo.getAlbum());
     af.commit();
   }
 
