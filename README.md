@@ -44,6 +44,12 @@ To run in multiple files use:
 $ find . -iname \*.mp3 -exec java -jar tagutil.jar "{}" \;
 ```
 
+On Windows
+
+```
+Get-ChildItem -File *.m4a | Foreach {java -jar .\tagutil.jar $_.fullname}
+```
+
 Tested with mp3, ogg and m4a file extensions in Linux and Android (using termux), should run fine in Windows.
 
 ## Releases
